@@ -12,7 +12,7 @@
 <body>
 <%
 	//MemberDao 객체의 참조값 얻어오기
-	MemberDao dao = MemberDao.getIstance();
+	MemberDao dao = MemberDao.getInstance();
 	//회원 목록 얻어오리
 	List<MemberDto> list =dao.getList();
 %>

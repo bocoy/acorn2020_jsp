@@ -13,7 +13,7 @@ public class MemberDao {
 	private static MemberDao dao;
 	private MemberDao() {}
 	
-	public static MemberDao getIstance() {
+	public static MemberDao getInstance() {
 		if(dao==null) {
 			dao = new MemberDao();
 		}
