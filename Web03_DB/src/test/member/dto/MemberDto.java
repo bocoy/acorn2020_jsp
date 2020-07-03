@@ -7,9 +7,9 @@ public class MemberDto {
 	
 	public MemberDto() {}
 	public MemberDto(int num,String name,String addr) {
-		num = this.num;
-		name = this.name;
-		addr = this.addr;
+		this.num = num;
+		this.name = name;
+		this.addr = addr;
 	}
 	public int getNum() {
 		return num;

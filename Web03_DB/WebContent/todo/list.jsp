@@ -11,11 +11,11 @@
 <link rel="stylesheet" href="/Web03_DB/css/bootstrap.css" />
 <style>
 	#head{
-		position: fixed;
+		position: relative;
 		top:0;
 		right:0;
 		left:0;
-		background-color:gray;
+		background-color: gray;
 		color: white;	
 		text-align: center;
 		z-index: 999;
@@ -27,15 +27,20 @@
 		bottom:0;
 		z-index: 999;
 	}
-	table{
-		position: absolute;
-		top: 6%;
-		bottom: 10%;
-		z-index: 777;
-	}
+
 </style>
 </head>
 <body>
+	<form action="/Web03_DB/send" method="post">
+	<div class="container">
+	<div class="navbar navbar-expand-sm navbar-dark bg-primary">
+		<a href="${pageContext.request.contextPath }/" class="navbar-brand">Acorn</a>
+		<ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/member/list.jsp">Member</a></li>
+			<li class="nav-item"><a class="nav-link active" href="${pageContext.request.contextPath }/todo/list.jsp">Todo</a></li>
+			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/todo/list2.jsp">Todo2</a></li>
+		</ul>
+	</div>
 	<div id = "head" class="text-center border">
 		<h1>할일 목록</h1>
 	</div>
@@ -43,41 +48,41 @@
 	TodoDao dao = TodoDao.getInstance();
 	List<TodoDto> list = dao.getList();
 %>
-	<form action="/Web03_DB/send" method="post">
-	<table class ="table table-hover table-dark table-striped">
+		<table class ="table table-hover table-dark table-striped table-sm">
 		<thead >
-			<tr>
-				<th>번 호</th>
-				<th>할 일</th>
-				<th>날 짜</th>
-				<th>삭 제</th>
+			<tr class="d-flex">
+				<th class="col-2">번호</th>
+				<th class="col-5">내용</th>
+				<th class="col-3">등록일</th>
+				<th class="col-2">삭제</th>
 			</tr>
 		</thead>
 		<tbody>
 			<%for(TodoDto tmp:list){%> 
-				<tr>
-					<td><%=tmp.getNum()%></td>
-					<td><%=tmp.getWork()%></td>
-					<td><%=tmp.getRegdate()%></td>
-					<td><a href="delete.jsp?num=<%=tmp.getNum()%>">삭제</a></td>
+				<tr class="d-flex">
+					<td class="col-2"><%=tmp.getNum() %></td>
+					<td class="col-5"><%=tmp.getWork() %></td>
+					<td class="col-3"><%=tmp.getRegdate() %></td>
+					<td class="col-2"><a href="delete.jsp?num=<%=tmp.getNum() %>" class="badge badge-danger">삭제</a></td>
 				</tr>
 			<%} %>
-				<tr>
-					<td>
+				<tr class="d-flex">
+					<td class="col-2">
 					
 					</td>
-					<td>
+					<td class="col-5">
 						<input class="form-control" type="text" name="work" id="work" />
 					</td>
-					<td>
+					<td class="col-3">
 					
 					</td>
-					<td>
+					<td class="col-2">
 						
 					</td>
 				</tr>
 		</tbody>
 	</table>
+	</div>
 	<div id="groupbtn">
 		<button class="btn btn-secondary btn-block" type="submit">추가하기</button>
 	</div>

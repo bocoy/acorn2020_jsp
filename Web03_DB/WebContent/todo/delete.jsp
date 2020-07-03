@@ -11,6 +11,9 @@
 	// 2. DB에 저장한다.
 	TodoDao dao=TodoDao.getInstance();
 	dao.delete(num);
+	String cPath= request.getContextPath();
+	response.sendRedirect(cPath+"/todo/list.jsp");
+
 %>
 <!DOCTYPE html>
 <html>
@@ -19,10 +22,6 @@
 <title>/todo/delete.jsp</title>
 </head>
 <body>
-	<script>
-		alert("삭제 했습니다.")
-		//javascript를 이용해서 클라이언트에게 특정 경로로 요청을 다시 하도록 강요하기
-		location.href="${pageContext.request.contextPath }/todo/list.jsp"
-	</script>
+
 </body>
 </html>

@@ -18,7 +18,7 @@
 <title>/todo/insert.jsp</title>
 </head>
 <body>
-	<p>할일을 추가했습니다.<a href="list.jsp">확인해볼래?</a></p>
+	<p>할일을 추가했습니다.<a href="list2.jsp">확인해볼래?</a></p>
 </body>
 </html>
 
