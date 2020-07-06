@@ -29,7 +29,7 @@ public class BoardDao {
 			//실행할 sql 문 준비하기 
 			String sql = "INSERT INTO board_guest"
 						+ " (num,writer,title,content,regdate)"
-						+ " VALUES(board_seq.NEXTVAL,?,?,?,SYSDATE)";
+						+ " VALUES(board_guest_seq.NEXTVAL,?,?,?,SYSDATE)";
 			pstmt = conn.prepareStatement(sql);
 			//? 에 바인딩 할 값이 있으면 바인딩한다.
 			pstmt.setString(1, dto.getWriter());
@@ -179,7 +179,7 @@ public class BoardDao {
 			//실행할 sql 문 준비하기
 			String sql ="SELECT num,writer,title,content,regdate"
 					+ " FROM board_guest"
-					+ " ORDER BY ASC";
+					+ " ORDER BY num ASC";
 			pstmt = conn.prepareStatement(sql);
 			//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
 			
