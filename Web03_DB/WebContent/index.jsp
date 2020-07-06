@@ -22,6 +22,7 @@
 			<li><a href="member/list.jsp" class="badge badge-primary">회원 목록 보기</a></li>
 			<li><a href="todo/list.jsp" class="badge badge-primary">할일 목록 보기</a></li>
 			<li><a href="todo/list2.jsp" class="badge badge-primary">할일 목록 보기2</a></li>
+			<li><a href="board/list.jsp" class="badge badge-primary">글 목록 보기</a></li>
 		</ul>
 	</div>
 </body>
